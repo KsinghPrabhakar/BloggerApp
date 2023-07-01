@@ -1,0 +1,10 @@
+<div class="container card shadow w-50">
+  <div class="">
+    <h1 class="text-center">New post</h1>
+    <%= render "form", post: @post %>
+    <br>
+    <div>
+      <%= link_to "Back", posts_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

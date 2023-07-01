@@ -1,0 +1,25 @@
+<div id="<%= dom_id post %>">
+<% if post.user.present? %>
+<span>Posted by: <%= post.user.email.split("@").first.gsub(/\d/, '') %></span>
+<%end%>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><%= post.title %></div>
+      <%= post.description %>
+    </div>
+  </li>
+  <div class="d-flex justify-content-between">
+    <div>
+    <span class="badge text-dark rounded-pill"><%= pluralize(post.views, "View") %></span>
+    </div>
+    <div>
+    <span class="badge text-dark rounded-pill">likes: <%= post.likes.count %></span>
+    </div>
+    <div>
+    <span class="badge text-dark rounded-pill">Comments: <%= post.comments.count %></span>
+    </div>
+  </div>
+    <%= link_to "See more..", post, class: "btn btn-outline-info mb-4" %>
+</ul>
+</div>
